@@ -1,0 +1,55 @@
+<div class="justify-content-center mt-1">
+  <div class="my-3 col-12 text-center p-0 mr-0">
+    <img src="assets/images/region_logo@3x.png" class="regionLogo mb-2" alt="region log"/>
+    <div class="titleText">printer location</div>
+    <div class="regionText">{{ region }}</div>
+  </div>
+  <div
+    class="col-12 justify-content-center"
+    *ngIf="!loading && isSupported"
+    [hidden]="!hasCameras || !hasPermission"
+  >
+    <div class="col-auto scan-wrap mx-auto">
+      <zxing-scanner
+        (permissionResponse)="onHasPermission($event)"
+        (camerasFound)="onCamerasFound($event)"
+        (scanSuccess)="scanSuccessHandler($event)"
+      ></zxing-scanner>
+    </div>
+    <div class="col-12 text-center scanText">Scan QR Code</div>
+  </div>
+  <!--Error message holding div after load-->
+  <div
+    class="flex-fill d-flex flex-column align-content-center justify-content-center"
+    *ngIf="!loading"
+  >
+    <div class="errrorText mb-3" *ngIf="isSupported === false">
+      Your browser is not supported. Please use Safari on iOS devices and Chrome
+      on Android.
+    </div>
+    <div class="errrorText mb-3" *ngIf="hasCameras === false">
+      No cameras found.
+    </div>
+    <div class="errrorText mb-3" *ngIf="hasPermission === false">
+      You must grant camera permission.
+    </div>
+  </div>
+  <div class="col-md-3 text-center" *ngIf="loading">
+    <div
+      class="spinner-grow mb-2"
+      style="width: 5rem; height: 5rem; color: #3152a3;"
+      role="status"
+    >
+      <span class="sr-only">Loading...</span>
+    </div>
+    <h2><span style="color: #3152a3;">Loading Print Queue</span></h2>
+  </div>
+  <div class="col-12 d-flex justify-content-center">
+    <a
+      class="col-9 btn defaultBtn m-1 d-flex align-items-center justify-content-center flex-fill"
+      [routerLink]="['/select-region']"
+    >
+      <img src="assets/images/region_logo@3x.png" alt="region logo"/>
+    </a>
+  </div>
+</div>

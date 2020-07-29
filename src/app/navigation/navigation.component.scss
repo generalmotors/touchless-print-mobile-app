@@ -1,0 +1,51 @@
+// Centers branding
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+// Removes bootstrap toggle highlight
+.navbar-toggler {
+    border-color: transparent;
+}
+
+button:focus {
+    outline: 0;
+}
+
+// Touchless Print logo
+.logo {
+    height: 30px;
+    width: auto;
+}
+
+// Corner button style
+.cornerBtn {
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+    min-height: 30px;
+    max-height: 30px;
+    min-width: 30px;
+    max-width: 30px;
+}
+
+// Sidenav display spacing
+.sidenav {
+    &.shrink {
+        width: 0;
+    }
+    &.grow {
+        width: 125px;
+    }
+}
+
+// Spacer to align with navbar
+.spacer {
+    background-color: transparent;
+    min-height: 56px;
+    max-height: 56px;
+    text-align: center;
+    padding-top: 56px;
+}

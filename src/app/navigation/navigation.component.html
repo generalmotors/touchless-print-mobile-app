@@ -1,0 +1,26 @@
+<div class="sidenav" [ngClass]="{'shrink': !showNav, 'grow': showNav}">
+  <a [routerLink]="['/main']" routerLinkActive="active" class="sidenavBtn">
+    <img src="assets/images/scanner-icon.png" alt="scanner"/>
+  </a>
+  <a [routerLink]="['/select-region']" routerLinkActive="active" class="sidenavBtn">
+    <img src="assets/images/region_logo@3x.png" alt="region select">
+  </a>
+</div>
+<div id="top-nav" [ngClass]="{'show-nav': showNav}">
+  <nav class="navbar navbar-dark fixed-top" style="background-color: #3152a3;">
+    <button class="navbar-toggler" type="button" (click)="toggleNav()">
+      <img src="assets/images/hamburger_icon@3x.png" class="cornerBtn" alt="hamburger menu"/>
+    </button>
+    <a class="navbar-brand mx-auto" href="#"
+    >
+      <img src="assets/images/touchless_print_logo@3x.png" class="logo"
+           alt="logo"/>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav"></div>
+    </div>
+  </nav>
+
+  <div class="spacer">
+  </div>
+</div>

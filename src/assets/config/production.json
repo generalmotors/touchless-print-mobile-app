@@ -1,0 +1,10 @@
+{
+  "North America": {
+    "url": "https://<URL to DPR directory>/<modified mydoc page name>.aspx",
+    "active": true
+  },
+  "South America": {
+    "url": "https://<URL to DPR directory>/<modified mydoc page name>.aspx",
+    "active": true
+  }
+}

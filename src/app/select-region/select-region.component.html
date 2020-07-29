@@ -1,0 +1,31 @@
+<div class="col-12 row justify-content-center p-0 m-0">
+  <div class="my-3 col-12 text-center p-0 mr-0">
+    <img src="assets/images/region_logo@3x.png" class="regionLogo mb-2" alt="region logo"/>
+    <div class="titleText">select printer location</div>
+  </div>
+  <div
+    class="col-9 text-center regionbtn d-flex align-items-center mb-3"
+    *ngFor="let reg of availableRegions"
+    [ngClass]="{ active: region === reg }"
+    (click)="setRegion(reg)"
+  >
+    <div
+      class="btnWrap d-flex align-items-center justify-content-center"
+      [ngClass]="{ active: region === reg }"
+    >
+      <img
+        src="assets/images/select_arrow@3x.png"
+        class=""
+        *ngIf="region !== reg; else CheckIt"
+        alt="select arrow"/>
+      <ng-template #CheckIt
+      ><img src="assets/images/selected_arrow@3x.png"
+            alt="selected"/></ng-template>
+    </div>
+    <div
+      class="regionLabel d-flex align-items-center justify-content-center flex-fill"
+    >
+      {{ reg }}
+    </div>
+  </div>
+</div>
